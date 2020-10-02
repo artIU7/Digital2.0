@@ -1,0 +1,16 @@
+/App/Server//.build
+/App/Server//.circleci
+/App/Server//cloud.yml
+/App/Server//web.Dockerfile
+/App/Server//.git
+/App/Server//.gitigbore
+/App/Server//.dockerignore
+/App/Server//web.Dockerfile 	
+/App/Server//no_deploy/*
+/App/Client/AR Biulding GIS/Pods/*
+/video/*
+/Video&Material/*
+/Sketch/*
+/Model3D/doc/*
+/Presentation/Видео/*
+/Presentation/задание/*
