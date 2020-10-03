@@ -18,8 +18,25 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>HERECredentials</key>
+	<dict>
+		<key>AccessKeyId</key>
+		<string>F16xJYrdUpxSYCsOZlx-2Q</string>
+		<key>AccessKeySecret</key>
+		<string>JdOdxgQ3fMwvJxXRGQu5NRqGpqLxrtCp2kJ9BRq2ey9KIhIxi6AurY6uIYIvXSLys1eAKjy4enjoJ1qzOCBhOQ</string>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>YES</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>YES</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>YES</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YES</string>
+	<key>NSMotionUsageDescription</key>
+	<string>YES</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

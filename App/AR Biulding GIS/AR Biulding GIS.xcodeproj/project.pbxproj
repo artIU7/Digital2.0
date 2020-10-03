@@ -3,19 +3,52 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B707E20B2527A17C0053612F /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B707E20A2527A17C0053612F /* heresdk.xcframework */; };
+		B707E20C2527A17C0053612F /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B707E20A2527A17C0053612F /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B725E0C625281BFF00B593ED /* PolylineDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0C525281BFF00B593ED /* PolylineDraw.swift */; };
+		B725E0C925281C4E00B593ED /* gesturedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0C825281C4E00B593ED /* gesturedelegate.swift */; };
+		B725E0CF25282EFA00B593ED /* ARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0CE25282EFA00B593ED /* ARController.swift */; };
+		B725E0D12528306500B593ED /* SCeneARStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B725E0D02528306500B593ED /* SCeneARStoryboard.storyboard */; };
+		B725E0D32528330300B593ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0D22528330300B593ED /* NetworkService.swift */; };
+		B725E0E2252834D800B593ED /* SessionAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0E1252834D800B593ED /* SessionAR.swift */; };
+		B725E0E4252835F900B593ED /* extensionSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0E3252835F900B593ED /* extensionSCNNode.swift */; };
 		B7326F4925279F2200817C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4825279F2200817C5B /* AppDelegate.swift */; };
 		B7326F4B25279F2200817C5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4A25279F2200817C5B /* SceneDelegate.swift */; };
 		B7326F4D25279F2200817C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4C25279F2200817C5B /* ViewController.swift */; };
 		B7326F5025279F2200817C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7326F4E25279F2200817C5B /* Main.storyboard */; };
 		B7326F5225279F2400817C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7326F5125279F2400817C5B /* Assets.xcassets */; };
 		B7326F5525279F2400817C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7326F5325279F2400817C5B /* LaunchScreen.storyboard */; };
+		B7A483A32527A88100228640 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A483A22527A88100228640 /* LocationManager.swift */; };
+		B7A483A52527A9D300228640 /* helperPositionIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A483A42527A9D300228640 /* helperPositionIndicator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B707E20D2527A17C0053612F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B707E20C2527A17C0053612F /* heresdk.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B707E20A2527A17C0053612F /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = heresdk.xcframework; path = "../../../../Downloads/heresdk-explore-ios-4.5.0.0.3276/heresdk/frameworks/heresdk.xcframework"; sourceTree = "<group>"; };
+		B725E0C525281BFF00B593ED /* PolylineDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolylineDraw.swift; sourceTree = "<group>"; };
+		B725E0C825281C4E00B593ED /* gesturedelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gesturedelegate.swift; sourceTree = "<group>"; };
+		B725E0CE25282EFA00B593ED /* ARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARController.swift; sourceTree = "<group>"; };
+		B725E0D02528306500B593ED /* SCeneARStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCeneARStoryboard.storyboard; sourceTree = "<group>"; };
+		B725E0D22528330300B593ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B725E0E1252834D800B593ED /* SessionAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAR.swift; sourceTree = "<group>"; };
+		B725E0E3252835F900B593ED /* extensionSCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionSCNNode.swift; sourceTree = "<group>"; };
 		B7326F4525279F2200817C5B /* AR Biulding GIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Biulding GIS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7326F4825279F2200817C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7326F4A25279F2200817C5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +57,8 @@
 		B7326F5125279F2400817C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7326F5425279F2400817C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7326F5625279F2400817C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7A483A22527A88100228640 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B7A483A42527A9D300228640 /* helperPositionIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helperPositionIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +66,109 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B707E20B2527A17C0053612F /* heresdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B707E2092527A17C0053612F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B707E20A2527A17C0053612F /* heresdk.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B707E20E2527A1B60053612F /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				B7A483A22527A88100228640 /* LocationManager.swift */,
+				B7A483A42527A9D300228640 /* helperPositionIndicator.swift */,
+			);
+			path = LocationService;
+			sourceTree = "<group>";
+		};
+		B707E20F2527A1B90053612F /* MapsService */ = {
+			isa = PBXGroup;
+			children = (
+				B725E0C725281C3600B593ED /* extension+GestureDelegate */,
+				B725E0C425281BEB00B593ED /* Helper */,
+				B725E0D22528330300B593ED /* NetworkService.swift */,
+			);
+			path = MapsService;
+			sourceTree = "<group>";
+		};
+		B707E2102527A1BC0053612F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B707E2132527A20B0053612F /* Delegate */,
+				B707E2122527A1F90053612F /* Controller */,
+				B707E2112527A1F00053612F /* View */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B707E2112527A1F00053612F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7326F4E25279F2200817C5B /* Main.storyboard */,
+				B7326F5325279F2400817C5B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B707E2122527A1F90053612F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7326F4C25279F2200817C5B /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B707E2132527A20B0053612F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B7326F4825279F2200817C5B /* AppDelegate.swift */,
+				B7326F4A25279F2200817C5B /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		B725E0C425281BEB00B593ED /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B725E0C525281BFF00B593ED /* PolylineDraw.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B725E0C725281C3600B593ED /* extension+GestureDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B725E0C825281C4E00B593ED /* gesturedelegate.swift */,
+			);
+			path = "extension+GestureDelegate";
+			sourceTree = "<group>";
+		};
+		B725E0CD25282EE600B593ED /* ARSceneController */ = {
+			isa = PBXGroup;
+			children = (
+				B725E0CE25282EFA00B593ED /* ARController.swift */,
+				B725E0D02528306500B593ED /* SCeneARStoryboard.storyboard */,
+				B725E0E1252834D800B593ED /* SessionAR.swift */,
+				B725E0E3252835F900B593ED /* extensionSCNNode.swift */,
+			);
+			path = ARSceneController;
+			sourceTree = "<group>";
+		};
 		B7326F3C25279F2200817C5B = {
 			isa = PBXGroup;
 			children = (
 				B7326F4725279F2200817C5B /* AR Biulding GIS */,
 				B7326F4625279F2200817C5B /* Products */,
+				B707E2092527A17C0053612F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +183,11 @@
 		B7326F4725279F2200817C5B /* AR Biulding GIS */ = {
 			isa = PBXGroup;
 			children = (
-				B7326F4825279F2200817C5B /* AppDelegate.swift */,
-				B7326F4A25279F2200817C5B /* SceneDelegate.swift */,
-				B7326F4C25279F2200817C5B /* ViewController.swift */,
-				B7326F4E25279F2200817C5B /* Main.storyboard */,
+				B725E0CD25282EE600B593ED /* ARSceneController */,
+				B707E2102527A1BC0053612F /* Application */,
+				B707E20F2527A1B90053612F /* MapsService */,
+				B707E20E2527A1B60053612F /* LocationService */,
 				B7326F5125279F2400817C5B /* Assets.xcassets */,
-				B7326F5325279F2400817C5B /* LaunchScreen.storyboard */,
 				B7326F5625279F2400817C5B /* Info.plist */,
 			);
 			path = "AR Biulding GIS";
@@ -77,6 +203,7 @@
 				B7326F4125279F2200817C5B /* Sources */,
 				B7326F4225279F2200817C5B /* Frameworks */,
 				B7326F4325279F2200817C5B /* Resources */,
+				B707E20D2527A17C0053612F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7326F5525279F2400817C5B /* LaunchScreen.storyboard in Resources */,
+				B725E0D12528306500B593ED /* SCeneARStoryboard.storyboard in Resources */,
 				B7326F5225279F2400817C5B /* Assets.xcassets in Resources */,
 				B7326F5025279F2200817C5B /* Main.storyboard in Resources */,
 			);
@@ -137,9 +265,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B725E0E4252835F900B593ED /* extensionSCNNode.swift in Sources */,
+				B7A483A32527A88100228640 /* LocationManager.swift in Sources */,
+				B725E0C625281BFF00B593ED /* PolylineDraw.swift in Sources */,
+				B7A483A52527A9D300228640 /* helperPositionIndicator.swift in Sources */,
+				B725E0E2252834D800B593ED /* SessionAR.swift in Sources */,
 				B7326F4D25279F2200817C5B /* ViewController.swift in Sources */,
+				B725E0D32528330300B593ED /* NetworkService.swift in Sources */,
+				B725E0CF25282EFA00B593ED /* ARController.swift in Sources */,
 				B7326F4925279F2200817C5B /* AppDelegate.swift in Sources */,
 				B7326F4B25279F2200817C5B /* SceneDelegate.swift in Sources */,
+				B725E0C925281C4E00B593ED /* gesturedelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
