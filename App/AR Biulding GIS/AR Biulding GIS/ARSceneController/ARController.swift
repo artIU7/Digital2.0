@@ -73,7 +73,7 @@ extension ARSceneController {
         guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
              let planeNode = SCNNode.createPlaneNode(planeAnchor: planeAnchor)
              node.addChildNode(planeNode)
-        node.addChildNode(sphere(pos: SCNVector3(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)))
+        //node.addChildNode(sphere(pos: SCNVector3(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)))
     }
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
        
