@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
-import heresdk
+import NMAKit
+
+//import heresdk
 import CoreLocation
 
-extension MapViewController  {
+extension MapSceneViewController  {
     // MARK 1
     func initLocationManager() {
         locationManager.delegate = self
@@ -26,14 +28,15 @@ extension MapViewController  {
             return
         }
         tempPositin = lastLocation.coordinate
-        let camera = mapView.camera
+        viewMap.set(geoCenter: NMAGeoCoordinates(latitude: tempPositin.latitude, longitude: tempPositin.longitude), animation: .linear)
+        /*let camera = mapView.camera
         let orientation = MapCamera.OrientationUpdate(bearing: lastLocation.course,
                                                       tilt: 0)
         camera.setDistanceToTarget(distanceInMeters: 100)
         camera.lookAt(point: GeoCoordinates(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude), orientation: orientation,  distanceInMeters: 100 * 2)
         
         myLocationHere(location: GeoCoordinates(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude))
-        print(lastLocation)
+        print(lastLocation)*/
     }
     // MARK 3
     func locationManager(_ manager: CLLocationManager,
@@ -49,3 +52,4 @@ extension MapViewController  {
         locationManager.stopUpdatingLocation()
     }
 }
+

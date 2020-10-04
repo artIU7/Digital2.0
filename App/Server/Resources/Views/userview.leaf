@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Model</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+        <script src="/scripts/app.js"></script>  
+    </head>
+    <body class="container">
+        <h1 class="mt-3"> Building Config </h1>
+        <form method="POST" action="/users">
+            <div class="input-group">
+                <input type="double" name="altitude" class="form-control">
+                <input type="text" name="username" class="form-control">
+                <input type="double" name="positionID" class="form-control">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </form>
+  
+    <a id = "map-link" target="_blank"></a> 
+    <input type="button" onclick="addARSCene()" value="Добавить объект в БД"/>
+    <input type="button" onclick="myLocate()" value="Обновить"/>
+    <input type="button" onclick="showPoly()" value="Построить полигон"/>
+    <input type="button" onclick="drawLineFull()" value="Построить маршрут"/>
+    <input type="button" onclick="timerFetchData()" value="Локация пользователя"/>
+    <input type="button" onclick="myLocate()" value="Update"/>
+  
+     <!-- #for(user in userlist) {
+            <p class="mb-0">
+                #(user.altitude)
+                #(user.username)
+            </p>
+        } -->   
+    <div style="width: 1100px; height: 600px" id="mapContainer"></div>
+    <script id="example-code" data-categories="geoshape" type="text/javascript" >
+     // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'OpEX7JAkgcE5JDRUOLxjatbvuqlWhQnS1w51TzJKLOI'
+      });
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+      // add an event listener that is responsible for catching the
+      // 'tap' event on the feature and showing the infobubble
+     // provider.addEventListener('tap', onTap);
+    
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 10,
+          center: { lng: 43.111310, lat: 131.918209 }
+        }); 
+     // Create the default UI:
+    var ui = H.ui.UI.createDefault(map, maptypes, 'ru-RU');
+    // povide for thme night
+ //   const provider = map.getBaseLayer().getProvider();
+ //   const style = new H.map.Style('/styles/night_theme.yaml');
+  //  provider.setStyle(style);
+    // Enable the event system on the map instance:
+    var mapEvents = new H.mapevents.MapEvents(map);
+    let pos = {};
+    let arrayPos = [];
+    let arrayPolyPoint = [];
+    let arrayPost = [];
+    // фвв сшксду
+    let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
+    // add Circle 
+    function addCircleToMap(map,coord,radius,color){
+    map.addObject(new H.map.Circle(
+      // The central point of the circle
+      coord,
+      // The radius of the circle in meters
+      radius,
+      {
+        style: {
+          strokeColor: color["stroke"], // Color of the perimeter
+          lineWidth: 1,
+          fillColor: color["fillColor"]  // Color of the circle
+        }
+      }
+    ));
+  }
+  // post AR object new 
+  function addARSCene() {
+    let name = prompt('Высота здания', 2);
+    postDB(arrayPost,name);
+    arrayPos = [];
+    arrayPolyPoint = [];
+    arrayPost = [];
+  }
+  // add Polygon
+  function addPolygonToMap(map,arrayPolyPoint) {
+    var lineString = new H.geo.LineString();
+    for (let p of arrayPolyPoint) {
+         lineString.pushPoint(p);
+    }
+    //new H.geo.LineString(
+    //  [52, 13, 100, 48, 2, 100, 48, 16, 100, 52, 13, 100],
+    // 'values lat lng alt'
+    //);
+    map.addObject(
+      new H.map.Polygon(lineString, {
+        style: {
+          fillColor: '#D12B2B',
+          strokeColor: '#829',
+          lineWidth: 0.5
+         }
+    })
+  );
+}
+  //
+  function showPoly() {
+      addPolygonToMap(map,arrayPolyPoint);
+  }
+  function drawPositionMy() {
+      let color = {"stroke":'#540EF7',"fillColor":'#1BCDEE'}
+      console.log("logo:");
+      console.log(localBra);
+      addCircleToMap(map,localBra,5,color);
+      map.setCenter(localBra);
+      localBra = {};
+   
+ 
+  }
+  function addPolylineToMap(map,arrayPoly) {
+    var lineString = new H.geo.LineString();
+    for (let p of arrayPoly) {
+         lineString.pushPoint(p);
+    }
+    map.addObject(new H.map.Polyline(
+        lineString, { style: { strokeColor : '#F24545',
+                             lineWidth: 1 }}
+    ));
+}
+function drawLineFull() {
+    addPolylineToMap(map,arrayPos);
+}
+function timerFetchData() {
+    let timerIdLocation = setInterval(() => getLocation(), 5000);
+    let timerIdDraw = setInterval(() => drawPositionMy(), 8000);
+}
+function myLocate() {
+  // let colorMyLocation= {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
+  getLocate();
+  console.log(positionMyLocation);
+ // addCircleToMap(map,positionMyLocation,0.5,colorMyLocation);
+}
+    // Add event listeners:
+    map.addEventListener('tap', function(evt) {
+    let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
+    // Log 'tap' and 'mouse' events:
+    console.log(evt.type, evt.currentPointer.viewportX);
+    var drawposition = map.screenToGeo(evt.currentPointer.viewportX , evt.currentPointer.viewportY)
+    console.log(drawposition)
+    addCircleToMap(map,drawposition,1,color);
+    pos = {lat:drawposition.lat, lng:drawposition.lng}
+    posV = {lat:drawposition.lat, lng:drawposition.lng, alt:40}
+    postCoordinate = {"lat":drawposition.lat, "lot":drawposition.lng}
+    arrayPos.push(pos)
+    arrayPolyPoint.push(posV)
+    arrayPost.push(postCoordinate)
+    console.log(arrayPos)
+    console.log(arrayPolyPoint)
+    console.log(arrayPost)
+    });
+
+    window.addEventListener('resize', () => map.getViewPort().resize());
+
+    // Instantiate the default behavior, providing the mapEvents object:
+    var behavior = new H.mapevents.Behavior(mapEvents);
+    //  Add Marker
+    var svgMarkupPosition = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' + 
+    'y="0px" style="margin:-112px 0 0 -32px" width="136px"' + 
+    'height="150px" viewBox="0 0 136 150"><ellipse fill="#000" ' +
+    'cx="32" cy="128" rx="36" ry="4"><animate attributeName="cx" ' + 
+    'from="32" to="32" begin="0s" dur="1.5s" values="96;32;96" ' + 
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes="0;0.4;1"' + 
+    'calcMode="spline" repeatCount="indefinite"/>' +    
+    '<animate attributeName="rx" from="36" to="36" begin="0s"' +
+    'dur="1.5s" values="36;10;36" keySplines=".6 .0 .8 .0; .0 .8 .0 1"' + 
+    'keyTimes="0;0.4;1" calcMode="spline" repeatCount="indefinite"/>' +
+    '<animate attributeName="opacity" from=".2" to=".2"  begin="0s" ' +
+    ' dur="1.5s" values=".1;.7;.1" keySplines=" .6.0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes=" 0;0.4;1" calcMode="spline" ' +
+    'repeatCount="indefinite"/></ellipse><ellipse fill="#1b468d" ' +
+    'cx="26" cy="20" rx="16" ry="12"><animate attributeName="cy" ' +
+    'from="20" to="20" begin="0s" dur="1.5s" values="20;112;20" ' +
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes=" 0;0.4;1" ' +
+    'calcMode="spline" repeatCount="indefinite"/> ' +
+    '<animate attributeName="ry" from="16" to="16" begin="0s" ' + 
+    'dur="1.5s" values="16;12;16" keySplines=".6 .0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes="0;0.4;1" calcMode="spline" ' +
+    'repeatCount="indefinite"/></ellipse></svg>';
+    // svg to icon
+    var icon = new H.map.Icon(svgMarkupPosition),
+    coords = {lat: 55.791105, lng: 38.438457},
+    marker = new H.map.Marker(coords, {icon: icon});
+    // add object to map
+    map.addObject(marker);
+    map.setCenter(coords);
+
+    </script>
+    </body>
+</html>

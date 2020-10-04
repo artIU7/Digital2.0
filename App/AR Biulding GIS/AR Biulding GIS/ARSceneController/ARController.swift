@@ -36,14 +36,30 @@ class ARSceneController: UIViewController, ARSCNViewDelegate  {
         let scene = SCNScene()
         sceneView.scene = scene
         runSession()
-        initTap()
+        //initTap()
+        addTapGestureToSceneView()
+
+        
+    }
+    func box(cvb : SCNVector3) {
+        let box = SCNBox(width: 5, height: 13, length: 2, chamferRadius: 0.0)
+        let node = SCNNode(geometry: box)
+        node.position = cvb//SCNVector3(0,0,-1)
+        sceneView.scene.rootNode.addChildNode(node)
     }
     // Init Сессия
     func runSession() {
-        configuration.worldAlignment = .camera
-        configuration.planeDetection = [.horizontal,.vertical]
+        //configuration.worldAlignment = .gravity
+        configuration.planeDetection = .horizontal
 
-        sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin,ARSCNDebugOptions.showFeaturePoints,ARSCNDebugOptions.showCameras,ARSCNDebugOptions.showBoundingBoxes]
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+       }
+    // Init Сессия
+    func stopDetection() {
+        //configuration.worldAlignment = .gravity
+        configuration.planeDetection = []
+        //sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
        }
 }
@@ -68,16 +84,7 @@ extension ARSceneController {
             print("limited tracking state: \(reason)")
         }
     }
-    // rendering
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-             let planeNode = SCNNode.createPlaneNode(planeAnchor: planeAnchor)
-             node.addChildNode(planeNode)
-        //node.addChildNode(sphere(pos: SCNVector3(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)))
-    }
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-       
-    }
+   
 }
 // взаимодейтсвие с AR через tap по обьект
 extension ARSceneController {
@@ -110,9 +117,7 @@ return sphereNode        }
             let hits = self.sceneView.hitTest(location, options: nil)
             if let tappednode = hits.first?.node {
                 print("tappennode :")
-               // planeNode.eulerAngles.x = -.pi / 2
-                buildingPrimitive(tappednode.position)
-                sphere(pos: tappednode.position)
+                box(cvb: tappednode.worldPosition)
             }
         }
     }
@@ -139,4 +144,37 @@ return sphereNode        }
                offset.append(deltaZ)
            return offset
        }
+    
+    @objc func addMapToSceneView(withGestureRecognizer recognizer: UIGestureRecognizer) {
+        stopDetection()
+        let tapLocation = recognizer.location(in: sceneView)
+        let hitTestResults = sceneView.hitTest(tapLocation, types: .existingPlaneUsingExtent)
+        
+        guard let hitTestResult = hitTestResults.first else { return }
+        let translation = hitTestResult.worldTransform.translation
+        let x = translation.x
+        let y = translation.y
+        let z = translation.z
+        
+        guard let mapScene = SCNScene(named: "scn.scnassets/maps.scn"),
+            let rootNode = mapScene.rootNode.childNode(withName: "root", recursively: false)
+            else { return }
+            let mapNode = rootNode.childNode(withName: "srt", recursively: false)!
+            mapNode.geometry?.materials.first?.diffuse.contents = arImage
+            rootNode.position = SCNVector3(x,y,z)
+            sceneView.scene.rootNode.addChildNode(rootNode)
+            box(cvb: SCNVector3(x, y, z))
+
+    }
+    
+    func addTapGestureToSceneView() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ARSceneController.addMapToSceneView(withGestureRecognizer:)))
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
+    }
 }
+extension float4x4 {
+    var translation: float3 {
+        let translation = self.columns.3
+        return float3(translation.x, translation.y, translation.z)
+    }}
+

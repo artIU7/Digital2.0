@@ -3,13 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		45CB31759918A7930DEE1350 /* Pods_AR_Biulding_GIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E21E9A9679F6B6399819E6A /* Pods_AR_Biulding_GIS.framework */; };
-		B707E20B2527A17C0053612F /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B707E20A2527A17C0053612F /* heresdk.xcframework */; };
-		B707E20C2527A17C0053612F /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B707E20A2527A17C0053612F /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B725E0C625281BFF00B593ED /* PolylineDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0C525281BFF00B593ED /* PolylineDraw.swift */; };
 		B725E0C925281C4E00B593ED /* gesturedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0C825281C4E00B593ED /* gesturedelegate.swift */; };
 		B725E0CF25282EFA00B593ED /* ARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0CE25282EFA00B593ED /* ARController.swift */; };
@@ -19,27 +17,21 @@
 		B725E0E4252835F900B593ED /* extensionSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725E0E3252835F900B593ED /* extensionSCNNode.swift */; };
 		B7326F4925279F2200817C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4825279F2200817C5B /* AppDelegate.swift */; };
 		B7326F4B25279F2200817C5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4A25279F2200817C5B /* SceneDelegate.swift */; };
-		B7326F4D25279F2200817C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4C25279F2200817C5B /* ViewController.swift */; };
-		B7326F5025279F2200817C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7326F4E25279F2200817C5B /* Main.storyboard */; };
+		B7326F4D25279F2200817C5B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326F4C25279F2200817C5B /* MapViewController.swift */; };
+		B7326F5025279F2200817C5B /* Main(old).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7326F4E25279F2200817C5B /* Main(old).storyboard */; };
 		B7326F5225279F2400817C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7326F5125279F2400817C5B /* Assets.xcassets */; };
 		B7326F5525279F2400817C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7326F5325279F2400817C5B /* LaunchScreen.storyboard */; };
 		B7A483A32527A88100228640 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A483A22527A88100228640 /* LocationManager.swift */; };
 		B7A483A52527A9D300228640 /* helperPositionIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A483A42527A9D300228640 /* helperPositionIndicator.swift */; };
+		B7D5209A2528BDB600CD0EB7 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D520992528BDB600CD0EB7 /* Maps.storyboard */; };
+		B7D5209F2528BE9700CD0EB7 /* MapSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5209E2528BE9700CD0EB7 /* MapSceneViewController.swift */; };
+		B7D520A22528D20800CD0EB7 /* sceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D520A12528D20800CD0EB7 /* sceneView.swift */; };
+		B7D520AA2528F46A00CD0EB7 /* scn.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D520A92528F46A00CD0EB7 /* scn.scnassets */; };
+		B7D520AD2529046E00CD0EB7 /* helperGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D520AC2529046E00CD0EB7 /* helperGeometry.swift */; };
+		B7D520B42529097000CD0EB7 /* generateMeshSRTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D520B32529097000CD0EB7 /* generateMeshSRTM.swift */; };
+		B7D520B825290A7D00CD0EB7 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D520B725290A7D00CD0EB7 /* StartApp.swift */; };
+		B7D520BB25290A8800CD0EB7 /* StartApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D520BA25290A8800CD0EB7 /* StartApp.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B707E20D2527A17C0053612F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B707E20C2527A17C0053612F /* heresdk.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		72254E5E6C24B49E8C7DD9B3 /* Pods-AR Biulding GIS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Biulding GIS.release.xcconfig"; path = "Target Support Files/Pods-AR Biulding GIS/Pods-AR Biulding GIS.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,13 +48,21 @@
 		B7326F4525279F2200817C5B /* AR Biulding GIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Biulding GIS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7326F4825279F2200817C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7326F4A25279F2200817C5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B7326F4C25279F2200817C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B7326F4F25279F2200817C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7326F4C25279F2200817C5B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B7326F4F25279F2200817C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main(old).storyboard"; sourceTree = "<group>"; };
 		B7326F5125279F2400817C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7326F5425279F2400817C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7326F5625279F2400817C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7A483A22527A88100228640 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B7A483A42527A9D300228640 /* helperPositionIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helperPositionIndicator.swift; sourceTree = "<group>"; };
+		B7D520992528BDB600CD0EB7 /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
+		B7D5209E2528BE9700CD0EB7 /* MapSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewController.swift; sourceTree = "<group>"; };
+		B7D520A12528D20800CD0EB7 /* sceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sceneView.swift; sourceTree = "<group>"; };
+		B7D520A92528F46A00CD0EB7 /* scn.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = scn.scnassets; sourceTree = "<group>"; };
+		B7D520AC2529046E00CD0EB7 /* helperGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helperGeometry.swift; sourceTree = "<group>"; };
+		B7D520B32529097000CD0EB7 /* generateMeshSRTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generateMeshSRTM.swift; sourceTree = "<group>"; };
+		B7D520B725290A7D00CD0EB7 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
+		B7D520BA25290A8800CD0EB7 /* StartApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartApp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B707E20B2527A17C0053612F /* heresdk.xcframework in Frameworks */,
 				45CB31759918A7930DEE1350 /* Pods_AR_Biulding_GIS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,47 +89,51 @@
 		B707E20E2527A1B60053612F /* LocationService */ = {
 			isa = PBXGroup;
 			children = (
+				B725E0D22528330300B593ED /* NetworkService.swift */,
 				B7A483A22527A88100228640 /* LocationManager.swift */,
-				B7A483A42527A9D300228640 /* helperPositionIndicator.swift */,
 			);
 			path = LocationService;
 			sourceTree = "<group>";
 		};
-		B707E20F2527A1B90053612F /* MapsService */ = {
+		B707E20F2527A1B90053612F /* MapsServiceOld(here_api) */ = {
 			isa = PBXGroup;
 			children = (
+				B7A483A42527A9D300228640 /* helperPositionIndicator.swift */,
 				B725E0C725281C3600B593ED /* extension+GestureDelegate */,
 				B725E0C425281BEB00B593ED /* Helper */,
-				B725E0D22528330300B593ED /* NetworkService.swift */,
 			);
-			path = MapsService;
+			path = "MapsServiceOld(here_api)";
 			sourceTree = "<group>";
 		};
 		B707E2102527A1BC0053612F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B7D520B625290A6B00CD0EB7 /* StartHelper */,
+				B7D520B22529095700CD0EB7 /* HelperGenerateSRTM */,
+				B7D5209B2528BE2B00CD0EB7 /* Controller */,
+				B7D520982528BDA300CD0EB7 /* View */,
 				B707E2132527A20B0053612F /* Delegate */,
-				B707E2122527A1F90053612F /* Controller */,
-				B707E2112527A1F00053612F /* View */,
+				B707E2122527A1F90053612F /* ControllerOld */,
+				B707E2112527A1F00053612F /* ViewOld(here_api) */,
 			);
 			path = Application;
 			sourceTree = "<group>";
 		};
-		B707E2112527A1F00053612F /* View */ = {
+		B707E2112527A1F00053612F /* ViewOld(here_api) */ = {
 			isa = PBXGroup;
 			children = (
-				B7326F4E25279F2200817C5B /* Main.storyboard */,
+				B7326F4E25279F2200817C5B /* Main(old).storyboard */,
 				B7326F5325279F2400817C5B /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = "ViewOld(here_api)";
 			sourceTree = "<group>";
 		};
-		B707E2122527A1F90053612F /* Controller */ = {
+		B707E2122527A1F90053612F /* ControllerOld */ = {
 			isa = PBXGroup;
 			children = (
-				B7326F4C25279F2200817C5B /* ViewController.swift */,
+				B7326F4C25279F2200817C5B /* MapViewController.swift */,
 			);
-			path = Controller;
+			path = ControllerOld;
 			sourceTree = "<group>";
 		};
 		B707E2132527A20B0053612F /* Delegate */ = {
@@ -165,6 +168,7 @@
 				B725E0D02528306500B593ED /* SCeneARStoryboard.storyboard */,
 				B725E0E1252834D800B593ED /* SessionAR.swift */,
 				B725E0E3252835F900B593ED /* extensionSCNNode.swift */,
+				B7D520A92528F46A00CD0EB7 /* scn.scnassets */,
 			);
 			path = ARSceneController;
 			sourceTree = "<group>";
@@ -192,12 +196,47 @@
 			children = (
 				B725E0CD25282EE600B593ED /* ARSceneController */,
 				B707E2102527A1BC0053612F /* Application */,
-				B707E20F2527A1B90053612F /* MapsService */,
+				B707E20F2527A1B90053612F /* MapsServiceOld(here_api) */,
 				B707E20E2527A1B60053612F /* LocationService */,
 				B7326F5125279F2400817C5B /* Assets.xcassets */,
 				B7326F5625279F2400817C5B /* Info.plist */,
 			);
 			path = "AR Biulding GIS";
+			sourceTree = "<group>";
+		};
+		B7D520982528BDA300CD0EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7D520992528BDB600CD0EB7 /* Maps.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7D5209B2528BE2B00CD0EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7D5209E2528BE9700CD0EB7 /* MapSceneViewController.swift */,
+				B7D520A12528D20800CD0EB7 /* sceneView.swift */,
+				B7D520AC2529046E00CD0EB7 /* helperGeometry.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7D520B22529095700CD0EB7 /* HelperGenerateSRTM */ = {
+			isa = PBXGroup;
+			children = (
+				B7D520B32529097000CD0EB7 /* generateMeshSRTM.swift */,
+			);
+			path = HelperGenerateSRTM;
+			sourceTree = "<group>";
+		};
+		B7D520B625290A6B00CD0EB7 /* StartHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B7D520B725290A7D00CD0EB7 /* StartApp.swift */,
+				B7D520BA25290A8800CD0EB7 /* StartApp.storyboard */,
+			);
+			path = StartHelper;
 			sourceTree = "<group>";
 		};
 		D09AC279CA5C1F637DB718D1 /* Pods */ = {
@@ -206,7 +245,6 @@
 				78F41AD8774E51913663123D /* Pods-AR Biulding GIS.debug.xcconfig */,
 				72254E5E6C24B49E8C7DD9B3 /* Pods-AR Biulding GIS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -221,7 +259,6 @@
 				B7326F4125279F2200817C5B /* Sources */,
 				B7326F4225279F2200817C5B /* Frameworks */,
 				B7326F4325279F2200817C5B /* Resources */,
-				B707E20D2527A17C0053612F /* Embed Frameworks */,
 				FC3A858AD6AA550EE92FAF19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -271,9 +308,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7326F5525279F2400817C5B /* LaunchScreen.storyboard in Resources */,
+				B7D520BB25290A8800CD0EB7 /* StartApp.storyboard in Resources */,
+				B7D5209A2528BDB600CD0EB7 /* Maps.storyboard in Resources */,
 				B725E0D12528306500B593ED /* SCeneARStoryboard.storyboard in Resources */,
 				B7326F5225279F2400817C5B /* Assets.xcassets in Resources */,
-				B7326F5025279F2200817C5B /* Main.storyboard in Resources */,
+				B7D520AA2528F46A00CD0EB7 /* scn.scnassets in Resources */,
+				B7326F5025279F2200817C5B /* Main(old).storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +366,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D520B42529097000CD0EB7 /* generateMeshSRTM.swift in Sources */,
 				B725E0E4252835F900B593ED /* extensionSCNNode.swift in Sources */,
+				B7D520AD2529046E00CD0EB7 /* helperGeometry.swift in Sources */,
 				B7A483A32527A88100228640 /* LocationManager.swift in Sources */,
 				B725E0C625281BFF00B593ED /* PolylineDraw.swift in Sources */,
+				B7D520A22528D20800CD0EB7 /* sceneView.swift in Sources */,
 				B7A483A52527A9D300228640 /* helperPositionIndicator.swift in Sources */,
 				B725E0E2252834D800B593ED /* SessionAR.swift in Sources */,
-				B7326F4D25279F2200817C5B /* ViewController.swift in Sources */,
+				B7D520B825290A7D00CD0EB7 /* StartApp.swift in Sources */,
+				B7326F4D25279F2200817C5B /* MapViewController.swift in Sources */,
+				B7D5209F2528BE9700CD0EB7 /* MapSceneViewController.swift in Sources */,
 				B725E0D32528330300B593ED /* NetworkService.swift in Sources */,
 				B725E0CF25282EFA00B593ED /* ARController.swift in Sources */,
 				B7326F4925279F2200817C5B /* AppDelegate.swift in Sources */,
@@ -343,12 +388,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B7326F4E25279F2200817C5B /* Main.storyboard */ = {
+		B7326F4E25279F2200817C5B /* Main(old).storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B7326F4F25279F2200817C5B /* Base */,
 			);
-			name = Main.storyboard;
+			name = "Main(old).storyboard";
 			sourceTree = "<group>";
 		};
 		B7326F5325279F2400817C5B /* LaunchScreen.storyboard */ = {
